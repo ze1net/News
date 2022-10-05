@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <center>
+    {% if searched %}
+        <h1>Your Searched For...{{ searched }}</h1>
+        <br/>
+        {%  for new in news %}
+        {{ new }}<br/>
+        {% enfor%}
+    {% else %}
+        <h1>Hey! You Forgot To search</h1>
+    {% endif %}
+
+    </center>
+{% endblock %}
