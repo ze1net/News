@@ -3,17 +3,16 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
-
     <div class="container">
         <h1 class="d-flex justify-content-center align-content-center my-5">Uzbekistan News</h1>
         <div class="row py-5">
             {% for new in news %}
-                {% if new.category == 'Uzbekistan News'%}
+                {% if new.category != 'World News' and new.category != 'Laters News'%}
                     <div class="col-6">
                         <div class="card mb-3">
                             <img src="{{ new.image.url }}" class="card-img-top" alt="{{ post.title }}">
                             <div class="card-body"> <!-- post/detail/3/  -->
-                                <h5 class="card-title text-danger"><a href="#" class="text-dark text-decoration-none"> {{ new.title }}</a></h5>
+                                <h5 class="card-title text-danger"><a href="{% url 'detail' %}" class="text-dark text-decoration-none"> {{ new.title }}</a></h5>
                                 <p class="card-text">
                                     {{ new.body|slice:':400' }}
                                 </p>
@@ -30,7 +29,5 @@
                  {% endif %}
             {% endfor %}
         </div>
-
     </div>
-
 {% endblock %}

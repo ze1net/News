@@ -3,21 +3,14 @@
     <title>{{ new.title }}</title>
 {% endblock %}
 {% block content %}
-    <div class="row">
+ <div class="row">
         <div class="col-8 offset-2">
+            <img class="" style="width: 100%" src="{{ new.image.url }}" alt="{{ new.title }}">
+            <h1>{{ new.title }}</h1>
+            <p>
+                {{ new.body }}
+            </p>
 
-                <img class="" style="width: 100%" src="{{ new.image.url }}" alt="{{ new.title }}">
-                <h1>{{ new.title }}</h1>
-                <p class="text-danger">
-                    {{ new.body }}
-                </p>
-                 <p class="card-text d-flex justify-content-between align-items-center"><small
-                         class="text-muted"></small>
-                     <small>
-                         <i class="bi bi-eye-fill me-1 text-danger"></i> {{ new.category }}
-                     </small>
-                     <small>Create by {{ new.date }}</small>
-                 </p>
-            </div>
         </div>
+    </div>
 {% endblock %}
